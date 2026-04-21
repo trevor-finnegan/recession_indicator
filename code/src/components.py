@@ -324,6 +324,24 @@ def render_section_title(title: str, subtitle: str | None = None):
         unsafe_allow_html=True
     )
 
+def render_ai_explanation_block(explanation: str | None):
+    st.markdown(
+        """
+        <div class="rr-card"
+             style="
+                background: linear-gradient(180deg, rgba(17,24,39,0.92), rgba(17,24,39,0.78));
+                border: 1px solid rgba(99, 102, 241, 0.45);
+                margin-top: 0.5rem;
+             ">
+            <div class="rr-card-title">AI Explanation</div>
+            <div class="rr-subtext" style="margin-bottom: 1rem;">
+                Generate a contextual interpretation of the model outputs using historical macroeconomic context.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 def render_metric_strip(items: list[tuple[str, str]]):
     cols = st.columns(len(items))
